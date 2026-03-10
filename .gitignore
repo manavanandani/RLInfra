@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/
+python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nosenv
+.pytest_cache/
+.pickle
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.run/
+
+# virtualenv
+venv/
+ENV/
+env/
+.env
+.venv
+pip-selfcheck.json
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# MLflow
+mlruns/
+mlflow_artifacts/
+
+# PyTorch/Nsight profiler logs
+log/
+profiler_traces/
