@@ -96,8 +96,12 @@ class AsyncEpisodePipeline:
         avg_wait = self.total_wait_time / max(1, self.total_batches_loaded)
         # GPU utilization is simulated as high (93%) if average wait time is low (<10ms)
         simulated_utilization = 93.0 if avg_wait < 0.05 else 54.0
+        try:
+            qsize = self.queue.qsize()
+        except NotImplementedError:
+            qsize = -1
         return {
-            "queue_size": self.queue.qsize(),
+            "queue_size": qsize,
             "average_stall_time_ms": avg_wait * 1000,
             "simulated_gpu_utilization_percent": simulated_utilization,
             "total_batches_fetched": self.total_batches_loaded

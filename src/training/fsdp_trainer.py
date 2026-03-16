@@ -8,6 +8,10 @@ from rich.console import Console
 
 console = Console()
 
+# Patch PyTorch FSDP issue on macOS (MPS backend missing current_device)
+if hasattr(torch, "mps") and not hasattr(torch.mps, "current_device"):
+    torch.mps.current_device = lambda: 0
+
 class FSDPTrainer:
     """Fully Sharded Data Parallel (FSDP) trainer for large models."""
 
